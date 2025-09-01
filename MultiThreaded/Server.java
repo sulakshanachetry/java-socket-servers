@@ -10,8 +10,9 @@ public class Server {
             @Override
             public void run() {
                 try (
-                        Socket socket = clientSocket; // auto-close at end
-                         PrintWriter out = new PrintWriter(socket.getOutputStream(), true); BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+                    Socket socket = clientSocket; // auto-close at end
+                    PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                    BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
                     String clientMessage = in.readLine();
                     System.out.println("Received from client: " + clientMessage);
 
