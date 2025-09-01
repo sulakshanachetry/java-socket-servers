@@ -8,12 +8,12 @@ public class Server {
         Server server = new Server();
         try {
             server.run();
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    public void run() throws IOException {
+    public void run() throws IOException, UnknownHostException {
         ServerSocket ss = new ServerSocket(8010);
         while (true) {
             System.out.println("Waiting for client connection...");

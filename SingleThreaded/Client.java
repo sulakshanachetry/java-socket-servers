@@ -1,6 +1,6 @@
 
 import java.io.*;
-import java.net.Socket;
+import java.net.*;
 
 public class Client {
 
@@ -8,12 +8,12 @@ public class Client {
         Client client = new Client();
         try {
             client.run();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void run() throws IOException {
+    private void run() throws IOException, UnknownHostException {
         Socket socket = new Socket("localhost", 8010);
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
